@@ -1,0 +1,145 @@
+@use "sass:color";
+
+$bg: #212223;
+$fg: #f1f1f1;
+$accent: #378DF7;
+$radius: 7px;
+$rounded-md: 10px;
+
+$base: #1d2021;
+$crust: #1d2021;
+$color00: #3c3836;
+$color01: #fbf1c7;
+$color02: #fbf1c7;
+$color03: #83a598;
+$color04: #fb4934;
+$color05: #b8bb26;
+$color06: #fe8019;
+$color07: #fabd2f;
+$color08: #1d2021;
+$color09: #d5c4a1;
+$color10: #d3869b;
+$color11: #8ec07c;
+
+$bg-alt: color.adjust(#3c3836, $alpha: -0.5);
+$text: #fbf1c7;
+$text-dimmed: color.adjust(#fbf1c7, $alpha: -0.5);
+
+window.Bar {
+  label {
+    margin: 0 8px;
+  }
+
+  .box_bg {
+    margin: 3px 6px 0px 6px;
+    border-radius: 10px;
+    padding: 2px;
+    background-color: $bg;
+    color: $fg;
+    font-weight: normal;
+    min-height: 2rem;
+    font-size: 1.1em;
+    border: none;
+    box-shadow: none;
+  }
+
+
+  .SysTray {
+    margin-right: 8px;
+
+    button {
+      padding: 0 4px;
+      background-color: transparent;
+    }
+  }
+
+  .FocusedClient {
+    color: $accent;
+  }
+
+  .Media .Cover {
+    min-height: 1.2em;
+    min-width: 1.2em;
+    border-radius: $radius;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .Battery label {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .AudioSlider {
+    * {
+      all: unset;
+    }
+
+    icon {
+      margin-right: .6em;
+    }
+
+    & {
+      margin: 0 1em;
+    }
+
+    trough {
+      background-color: color.adjust($fg, $alpha: -0.8);
+      border-radius: $radius;
+    }
+
+    highlight {
+      background-color: $accent;
+      min-height: .8em;
+      border-radius: $radius;
+    }
+
+    slider {
+      background-color: $fg;
+      border-radius: $radius;
+      min-height: 1em;
+      min-width: 1em;
+      margin: -.2em;
+    }
+  }
+}
+
+box .box_bg {
+  margin: 2px 8px 0px 8px;
+  padding: 40px;
+}
+
+.workspaces {
+  background: $bg;
+  padding: 0 10px;
+  border-radius: $rounded-md;
+
+  button {
+    all: unset;
+    border: 2px solid $color02;
+    min-width: 17px;
+    min-height: 10px;
+    border-radius: 10rem;
+    margin: 6px 7px;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+
+  .focused {
+    background: $color05;
+    border-color: $color05;
+    opacity: 1;
+  }
+
+  .occupied {
+    background: $color02;
+    border-color: $color02;
+    opacity: 1;
+  }
+}
