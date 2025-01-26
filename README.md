@@ -8,6 +8,6 @@
 </div>
 
 > [!NOTE]
-> - highly unstable...under development by a rookie
+> - under heavy development
 
 ![image](https://github.com/user-attachments/assets/51e5b0e9-4b3f-47e3-831c-53e72761ff47)
