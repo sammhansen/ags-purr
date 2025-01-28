@@ -116,11 +116,13 @@ window.Bar {
     }
 
     .Media .Cover {
+      padding: 0px;
       min-height: 1.2em;
-      min-width: 1.2em;
+      min-width: .2em;
       border-radius: $radius;
       background-position: center;
       background-size: contain;
+      background-color: transparent;
     }
 
     .Battery label {
