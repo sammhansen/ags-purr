@@ -53,7 +53,7 @@ class NotifiationMap implements Subscribable {
            * uncomment this if you want to "hide" the notifications
            * after TIMEOUT_DELAY
            */
-          // this.delete(id)
+          this.delete(id)
         })
       }))
     })
@@ -90,14 +90,13 @@ class NotifiationMap implements Subscribable {
 }
 
 export default function NotificationPopups() {
-  const { TOP, RIGHT } = Astal.WindowAnchor
+  const { TOP } = Astal.WindowAnchor
   const notifs = new NotifiationMap()
 
   return <window
     className="NotificationPopups"
-    exclusivity={Astal.Exclusivity.EXCLUSIVE}
     layer={Astal.Layer.OVERLAY}
-    anchor={TOP | RIGHT}>
+    anchor={TOP}>
     <box vertical noImplicitDestroy>
       {bind(notifs)}
     </box>

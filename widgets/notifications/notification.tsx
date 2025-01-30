@@ -35,53 +35,43 @@ export default function Notification(props: Props) {
   const { START, CENTER, END } = Gtk.Align
 
   return <eventbox
+    valign={Gtk.Align.CENTER}
     className={`Notification ${urgency(n)}`}
     setup={setup}
     onHoverLost={onHoverLost}>
     <box vertical>
-      <box className="header">
-        {(n.appIcon || n.desktopEntry) && <icon
-          className="app-icon"
-          visible={Boolean(n.appIcon || n.desktopEntry)}
-          icon={n.appIcon || n.desktopEntry}
-        />}
-        <label
-          className="app-name"
-          halign={START}
-          truncate
-          label={n.appName || "Unknown"}
-        />
-        <label
-          className="time"
-          hexpand
-          halign={END}
-          label={time(n.time)}
-        />
-        <button onClicked={() => n.dismiss()}>
-          <icon icon="window-close-symbolic" />
-        </button>
-      </box>
       <Gtk.Separator visible />
       <box className="content">
         {n.image && fileExists(n.image) && <box
           valign={START}
+          halign={CENTER}
           className="image"
           css={`background-image: url('${n.image}')`}
         />}
         {n.image && isIcon(n.image) && <box
           expand={false}
           valign={START}
+          halign={CENTER}
           className="icon-image">
           <icon icon={n.image} expand halign={CENTER} valign={CENTER} />
         </box>}
         <box vertical>
-          <label
-            className="summary"
-            halign={START}
-            xalign={0}
-            label={n.summary}
-            truncate
-          />
+          <box>
+            <label
+              className="summary"
+              halign={START}
+              xalign={0}
+              label={n.summary}
+              truncate
+            />
+            <label
+              className="time"
+              hexpand
+              halign={END}
+              label={time(n.time)}
+            />
+          </box>
+
           {n.body && <label
             className="body"
             wrap
