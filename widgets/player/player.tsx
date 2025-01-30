@@ -1,6 +1,7 @@
 import { Astal, Gtk } from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import { bind } from "astal"
+import { App } from "astal/gtk3"
 
 export const WINDOW_NAME = "player-window";
 
@@ -92,8 +93,9 @@ export default function MprisPlayers() {
 
   return (
     <window
-      visible={true}
+      visible={false}
       name="player-window"
+      setup={self => App.add_window(self)}
       anchor={TOP}
       margin_top={6}
     >
