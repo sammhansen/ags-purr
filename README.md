@@ -10,6 +10,8 @@
 > [!NOTE]
 > - under heavy development
 
-![image](https://github.com/user-attachments/assets/1c62d0b5-f823-4cc6-a75b-82bc37e63ef5)
+https://github.com/user-attachments/assets/00b1ba3d-1492-4552-8238-74bda0e0958a
+
+
 
 
