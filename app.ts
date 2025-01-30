@@ -10,8 +10,8 @@ App.start
     css: style,
     main() {
       App.get_monitors().map(Bar)
-      NotificationPopups()
       OSD()
+      NotificationPopups()
       MprisPlayers()
     },
   })
