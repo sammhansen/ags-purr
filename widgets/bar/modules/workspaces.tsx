@@ -22,7 +22,9 @@ export default function Workspaces() {
                     ? "occupied"
                     : "default",
               )}
-            />
+            >
+              {index}
+            </button>
           ));
       })}
     </box>
