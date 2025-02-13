@@ -22,11 +22,18 @@ $base0E: #cba6f7;  // Mauve
 $base0F: #eba0ac;  // Maroon
 
 window.Bar {
-  label {
-    margin: 0 8px;
+
+  launcher_button {
+    padding: 1px;
+    background-color: transparent;
+
+    launcher_label {
+      margin: 0 8px;
+      color: $base0B;
+    }
   }
 
-  .box_bg {
+  box_bg {
     margin: 3px 6px 0px 6px;
     border-radius: $radius;
     padding: 2px;
@@ -38,7 +45,7 @@ window.Bar {
     border: none;
     box-shadow: none;
 
-    .workspaces {
+    workspaces {
       background: transparent;
       padding: 5px 5px;
 
@@ -46,40 +53,25 @@ window.Bar {
         all: unset;
         border: none;
         color: $base03;
-
-        &:nth-child(1) {
-          margin-left: 0;
-        }
-
-        &:nth-last-child(1) {
-          margin-right: 0;
-        }
+        margin: 0px 4px 0px 4px;
       }
 
       .focused {
         all: unset;
+        margin: 0px 4px 0px 4px;
         color: $base0B;
         opacity: 1;
       }
 
       .occupied {
         all: unset;
+        margin: 0px 4px 0px 4px;
         color: $base06;
         padding: 1px;
       }
     }
-
-    .launcher_button {
-      padding: 1px;
-      background-color: transparent;
-    }
-
-    .launcher_button label {
-      padding: 0px;
-      color: $base0B;
-    }
-
-    .SysTray {
+    
+    SysTray {
 
       button {
         padding: 0 4px;
@@ -118,40 +110,24 @@ window.Bar {
       }
     }
 
-    .Battery {
+    Battery {
       /* padding: 3px; */
       /* margin: 4px; */
 
-      .batt-container {
+      batt-container {
         margin: 6px;
-        background-color: $base04;  /* Background color */
-        min-width: 90px;            /* Fixed width */
-        min-height: 1px;            /* Fixed height */
-        border-radius: $batt-radius;      /* Rounded corners */
+        background-color: $base04;
+        /* min-height: 1px; */
+        border-radius: $batt-radius;
 
-        .batt-bar {
-          background-color: $base0C; /* Color of battery level */
-          border-top-left-radius: $batt-radius;
-          border-bottom-left-radius: $batt-radius;
-          border-radius: inherit;
+        batt-bar {
+          background-color: $base0C;
           transition: width 0.3s ease-in-out;
         }
       }
 
-      /* Round the left side only if battery is not empty */
-      /* .batt-bar:not(:empty) { */
-        /* border-top-left-radius: $batt-radius; */
-        /* border-bottom-left-radius: $batt-radius; */
-      /* } */
-
-      /* Round the right side only if battery is full */
-      /* .batt-bar[style*="width: 90px"] { */
-        /* border-top-right-radius: $batt-radius; */
-        /* border-bottom-right-radius: $batt-radius; */
-      /* } */
-
-      .batt-percentage-text {
-        margin-left: 1px;        /* Spacing from battery bar */
+      batt-percentage-text {
+        margin-right: 7px;
       }
 
 
