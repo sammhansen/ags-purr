@@ -10,20 +10,20 @@ import Media from "./modules/media"
 const AnchorLeft = (
   <box spacing={8} hexpand halign={Gtk.Align.START}>
     <LauncherButton />
-    <WorkSpaces />
+    <Time />
+    <Media />
   </box>
 );
 
 const AnchorCenter = (
   <box spacing={8}>
-    <Media />
+    <WorkSpaces />
   </box>
 );
 
 const AnchorRight = (
   <box spacing={8} hexpand halign={Gtk.Align.END}>
     <SysTray />
-    <Time />
     <BatteryLevel />
   </box>
 );
