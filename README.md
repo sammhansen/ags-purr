@@ -8,7 +8,8 @@
 </div>
 
 > [!NOTE]
-> - under heavy development
+> - AGSV2
+> - GTK3
 
 ![image](https://github.com/user-attachments/assets/2ca44921-12ba-4349-80bf-e418e7e76dab)
 
