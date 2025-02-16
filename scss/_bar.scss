@@ -29,7 +29,7 @@ window.Bar {
 
     launcher_label {
       margin: 0 8px;
-      color: $base0B;
+      color: $base0E;
     }
   }
 
@@ -59,14 +59,14 @@ window.Bar {
       .focused {
         all: unset;
         margin: 0px 4px 0px 4px;
-        color: $base0B;
+        color: $base0E;
         opacity: 1;
       }
 
       .occupied {
         all: unset;
         margin: 0px 4px 0px 4px;
-        color: $base06;
+        color: $base0D;
         padding: 1px;
       }
     }
@@ -116,12 +116,14 @@ window.Bar {
 
       batt-container {
         margin: 6px;
-        background-color: $base04;
+        background-color: $base00;
+        border: 2px solid $base02;
         /* min-height: 1px; */
         border-radius: $batt-radius;
 
         batt-bar {
-          background-color: $base0C;
+          background-color: $base0E;
+          border-radius: 3px;
           transition: width 0.3s ease-in-out;
         }
       }
