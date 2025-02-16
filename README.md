@@ -8,7 +8,7 @@
 </div>
 
 > [!NOTE]
-> - agsV2
+> - AGSV2
 > - GTK4
 > - [GTK3](https://github.com/sammhansen/ags-purr/tree/gtk3)
 
