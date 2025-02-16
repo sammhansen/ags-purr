@@ -10,8 +10,10 @@
 > [!NOTE]
 > - agsV2
 > - GTK4
+> - [GTK3](https://github.com/sammhansen/ags-purr/tree/gtk3)
 
 ![image](https://github.com/user-attachments/assets/46134911-d1cb-4442-a9f7-3a1a26a7fa26)
+
 
 
 
