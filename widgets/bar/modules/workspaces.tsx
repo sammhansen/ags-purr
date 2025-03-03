@@ -1,32 +1,38 @@
 import Hyprland from "gi://AstalHyprland";
 import { bind } from "astal";
-import { CenterBox } from "astal/gtk4/widget";
 
-export default function Workspaces() {
-  const hypr = Hyprland.get_default();
+export default function WorkSpaces() {
+	const hypr = Hyprland.get_default();
 
-  return (
-    <box className="workspaces">
-      {bind(hypr, "workspaces").as((ws) => {
-        return [...Array(10)]
-          .map((_, i) => i + 1)
-          .map((index) => (
-            <button
-              valign="center"
-              vexpand={false}
-              onClick={() => hypr.dispatch("workspace", index.toString())}
-              className={bind(hypr, "focusedWorkspace").as((focused) =>
-                focused.id === index
-                  ? "focused"
-                  : ws.find((w) => w.id === index)
-                    ? "occupied"
-                    : "default",
-              )}
-            >
-              {index}
-            </button>
-          ));
-      })}
-    </box>
-  );
+	return (
+		<box vertical hexpand={true} className="workspaces">
+			{bind(hypr, "focusedWorkspace").as((focused) => {
+				const start = Math.floor((focused.id - 1) / 10) * 10 + 1;
+				const workspaces = Array.from({ length: 10 }, (_, i) => start + i);
+
+				return workspaces.map((index) => (
+					<box>
+						<box hexpand />
+						<button
+							onClicked={() => hypr.dispatch("workspace", index.toString())}
+							className={bind(hypr, "workspaces").as((ws) =>
+								[
+									focused.id === index
+										? "focused"
+										: ws.some((w) => w.id === index)
+											? "occupied"
+											: "default",
+								].join(" ")
+							)}
+						>
+							{index}
+						</button>
+						<box hexpand />
+
+					</box>
+				));
+			})}
+		</box>
+	);
 }
+

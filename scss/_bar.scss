@@ -4,22 +4,22 @@ $radius: 10px;
 $batt-radius: 10px;
 
 $base00transparent: color.adjust(#1e1e2e, $alpha: -0.1);
-$base00: #1e1e2e;  // Background
-$base01: #313244;  // Surface0
-$base02: #45475a;  // Surface1
-$base03: #585b70;  // Surface2
-$base04: #6c7086;  // Overlay0
-$base05: #cdd6f4;  // Text
-$base06: #f5e0dc;  // Rosewater
-$base07: #bac2de;  // Subtext1
-$base08: #f38ba8;  // Red
-$base09: #fab387;  // Peach
-$base0A: #f9e2af;  // Yellow
-$base0B: #a6e3a1;  // Green
-$base0C: #94e2d5;  // Teal
-$base0D: #89b4fa;  // Blue
-$base0E: #cba6f7;  // Mauve
-$base0F: #eba0ac;  // Maroon
+$base00: #1e1e2e; // Background
+$base01: #313244; // Surface0
+$base02: #45475a; // Surface1
+$base03: #585b70; // Surface2
+$base04: #6c7086; // Overlay0
+$base05: #cdd6f4; // Text
+$base06: #f5e0dc; // Rosewater
+$base07: #bac2de; // Subtext1
+$base08: #f38ba8; // Red
+$base09: #fab387; // Peach
+$base0A: #f9e2af; // Yellow
+$base0B: #a6e3a1; // Green
+$base0C: #94e2d5; // Teal
+$base0D: #89b4fa; // Blue
+$base0E: #cba6f7; // Mauve
+$base0F: #eba0ac; // Maroon
 
 window.Bar {
   label {
@@ -27,7 +27,7 @@ window.Bar {
   }
 
   .box_bg {
-    margin: 3px 6px 0px 6px;
+    margin: 5px 0px 5px 3px;
     border-radius: $radius;
     padding: 2px;
     background-color: $base00transparent;
@@ -58,8 +58,11 @@ window.Bar {
 
       .focused {
         all: unset;
-        color: $base0B;
+        color: $base00;
+        background-color: $base0E;
+        border-radius: 50%;
         opacity: 1;
+        margin: 5px;
       }
 
       .occupied {
@@ -69,18 +72,33 @@ window.Bar {
       }
     }
 
-    .launcher_button {
-      padding: 1px;
-      background-color: transparent;
-    }
+    .launcher-parent-box {
+      // background-color: $base0E;
+      // min-width: 5px;
+      // border-radius: $radius;
+      // margin: 5px;
 
-    .launcher_button label {
-      padding: 0px;
-      color: $base0B;
+      .weird {
+        background-color: $base0E;
+        // min-width: 5px;
+        // border-radius: $radius;
+
+        .launcher-button {
+          // padding: 1px;
+          // margin: 10px;
+          // border-radius: $radius;
+          // background-color: $base0E;
+
+          label {
+            padding: 0px;
+            // font-size: 25px;
+            // color: #000000;
+          }
+        }
+      }
     }
 
     .SysTray {
-
       button {
         padding: 0 4px;
         background-color: transparent;
@@ -105,12 +123,12 @@ window.Bar {
     }
 
     .Media {
-      background-color: transparent;      
+      background-color: transparent;
 
       .Cover {
         padding: 0px;
         min-height: 1.2em;
-        min-width: .2em;
+        min-width: 0.2em;
         border-radius: $radius;
         background-position: center;
         background-size: contain;
@@ -119,42 +137,52 @@ window.Bar {
     }
 
     .Battery {
+      all: unset;
       /* padding: 3px; */
       /* margin: 4px; */
 
       .batt-container {
+        all: unset;
         margin: 6px;
-        background-color: $base04;  /* Background color */
-        min-width: 90px;            /* Fixed width */
-        min-height: 1px;            /* Fixed height */
-        border-radius: $batt-radius;      /* Rounded corners */
+        background-color: $base04; /* Background color */
+        min-width: 1px; /* Fixed width */
+        // min-height: 90px;            /* Fixed height */
+        border-radius: $batt-radius; /* Rounded corners */
+        border: 2px solid $base04;
 
         .batt-bar {
+          all: unset;
           background-color: $base0C; /* Color of battery level */
           border-top-left-radius: $batt-radius;
           border-bottom-left-radius: $batt-radius;
           border-radius: inherit;
+          // min-width: ;
           transition: width 0.3s ease-in-out;
         }
       }
 
       /* Round the left side only if battery is not empty */
       /* .batt-bar:not(:empty) { */
-        /* border-top-left-radius: $batt-radius; */
-        /* border-bottom-left-radius: $batt-radius; */
+      /* border-top-left-radius: $batt-radius; */
+      /* border-bottom-left-radius: $batt-radius; */
       /* } */
 
       /* Round the right side only if battery is full */
       /* .batt-bar[style*="width: 90px"] { */
-        /* border-top-right-radius: $batt-radius; */
-        /* border-bottom-right-radius: $batt-radius; */
+      /* border-top-right-radius: $batt-radius; */
+      /* border-bottom-right-radius: $batt-radius; */
       /* } */
 
       .batt-percentage-text {
-        margin-left: 1px;        /* Spacing from battery bar */
+        margin-bottom: 1px; /* Spacing from battery bar */
       }
+    }
 
-
+    .CircleIndicator {
+      color: $base0E;
+      background-color: $base04;
+      font-size: 0.15em;
+      min-width: 10px;
     }
   }
 }
