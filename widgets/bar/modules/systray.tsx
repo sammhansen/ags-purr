@@ -1,14 +1,8 @@
 import { App } from "astal/gtk3"
-import { Variable, GLib, bind } from "astal"
-import { Astal, Gtk, Gdk } from "astal/gtk3"
-import Hyprland from "gi://AstalHyprland"
-import Mpris from "gi://AstalMpris"
-import Battery from "gi://AstalBattery"
-import Wp from "gi://AstalWp"
-import Network from "gi://AstalNetwork"
+import { bind } from "astal"
 import Tray from "gi://AstalTray"
 import { MaterialIcon } from "../../custom/MaterialIcon"
-import { SideRight } from "../../sideright/Main"
+import { DashBoard } from "../../dashboard/Main"
 
 export default function SysTray() {
 	const tray = Tray.get_default()
@@ -17,7 +11,7 @@ export default function SysTray() {
 		<button
 			className="notif-icon-button"
 			onClicked={() => {
-				App.toggle_window(SideRight);
+				App.toggle_window(DashBoard);
 			}}
 		>
 			<MaterialIcon icon="notifications" />

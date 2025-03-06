@@ -1,98 +1,69 @@
-// @use "vars" as *;
 @use "sass:color";
 
 $radius: 10px;
 $batt-radius: 10px;
 
 $base00transparent: color.adjust(#1e1e2e, $alpha: -0.1);
-$base00: #1e1e2e;  // Background
-$base01: #313244;  // Surface0
-$base02: #45475a;  // Surface1
-$base03: #585b70;  // Surface2
-$base04: #6c7086;  // Overlay0
-$base05: #cdd6f4;  // Text
-$base06: #f5e0dc;  // Rosewater
-$base07: #bac2de;  // Subtext1
-$base08: #f38ba8;  // Red
-$base09: #fab387;  // Peach
-$base0A: #f9e2af;  // Yellow
-$base0B: #a6e3a1;  // Green
-$base0C: #94e2d5;  // Teal
-$base0D: #89b4fa;  // Blue
-$base0E: #cba6f7;  // Mauve
-$base0F: #eba0ac;  // Maroon
+$base00: #1e1e2e; // Background
+$base01: #313244; // Surface0
+$base02: #45475a; // Surface1
+$base03: #585b70; // Surface2
+$base04: #6c7086; // Overlay0
+$base05: #cdd6f4; // Text
+$base06: #f5e0dc; // Rosewater
+$base07: #bac2de; // Subtext1
+$base08: #f38ba8; // Red
+$base09: #fab387; // Peach
+$base0A: #f9e2af; // Yellow
+$base0B: #a6e3a1; // Green
+$base0C: #94e2d5; // Teal
+$base0D: #89b4fa; // Blue
+$base0E: #cba6f7; // Mauve
+$base0F: #eba0ac; // Maroon
 
 .dashboard-window {
   background-color: $base00transparent;
   border-radius: $radius;
 }
 
-.systemMenuIconButton {
-  all: unset;
+.quick-toggle-box {
+  margin: 20px 3px 0px 3px;
+  // min-width: 200px;
+  // min-height: 200px;
   background-color: transparent;
-  min-width: 30px;
-  font-size: 25px;
-  margin: 0 10px 0 0;
-  border-radius: 16px;
-  padding: 10px 15px 10px 15px;
-  color: $base0A;
-  border: 0;
+  border-radius: 25px;
+
+  .quick-toggle-button {
+    margin: 5px 0px 0px 0px;
+    padding: 10px;
+    background-color: $base0E;
+    border-radius: 50%;
+    font-size: 40px;
+  }
 }
 
-.systemMenuIconButton:hover {
-  background-color: $base06;
-}
-
-.systemMenuVolumeProgress {
-  all: unset;
-  min-width: 200px;
-  margin-right: 20px;
-}
-
-.systemMenuVolumeProgress trough {
-  all: unset;
-  background: $base06;
-  min-height: 8px;
-  border-radius: 16px;
-}
-
-.systemMenuVolumeProgress trough slider {
-  all: unset;
-}
-
-.systemMenuVolumeProgress trough highlight {
-  all: unset;
-  min-width: 8px;
-  border-radius: 16px;
-  background: $base04;
-}
-
-.row {
-  margin: 0 20px 0 20px;
-}
-
-.rowRevealer {
-  padding: 6px 30px 6px 30px;
-}
-
-.themeButton {
-  all: unset;
+.quick-button-box {
+  margin-top: 20px;
   background-color: transparent;
-  font-size: 25px;
-  border-radius: 16px;
-  color: $base0E;
-  border: 0;
+  border-radius: 25px;
 }
 
-.themeButton:hover {
-  background-color: $base0E;
+.quick-button {
+  margin: 5px 0px 0px 0px;
+  padding: 10px;
+  background-color: $base03;
+  border-radius: 50%;
+  font-size: 40px;
 }
 
-.themeButtonSelected {
-  all: unset;
-  background-color: $base0C;
-  font-size: 25px;
-  border-radius: 16px;
-  color: $base03;
-  border: 0;
+.notifhistory-parent-box {
+  margin: 0px 0px 2px 0px;
+  min-width: 350px;
+
+  .notification-scrollable {
+    background-color: transparent;
+  }
+
+  .material-notifs-cleared {
+  }
 }

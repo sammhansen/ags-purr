@@ -1,5 +1,5 @@
 import { App, Gtk } from "astal/gtk3";
-import { SideLeft } from "./../../sideleft/Main";
+import { Player } from "./../../player/Main";
 import { MaterialIcon } from "../../custom/MaterialIcon";
 
 export default function LauncherButton(): JSX.Element {
@@ -22,7 +22,7 @@ export default function LauncherButton(): JSX.Element {
 					className="batt-bar"
 					hexpand={true}
 					onClicked={() => {
-						App.toggle_window(SideLeft);
+						App.toggle_window(Player);
 					}}
 					valign={Gtk.Align.END} // Align to bottom
 					heightRequest={20}

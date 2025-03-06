@@ -1,5 +1,7 @@
 import Hyprland from "gi://AstalHyprland";
 import { bind } from "astal";
+import { Gtk } from "astal/gtk3"
+import { CircularProgress } from "astal/gtk3/widget"
 
 export default function WorkSpaces() {
 	const hypr = Hyprland.get_default();
@@ -25,10 +27,10 @@ export default function WorkSpaces() {
 								].join(" ")
 							)}
 						>
-							{index}
+							{focused.id === index ?
+								<CircularProgress className="focused-circ-prog" value={1} startAt={0.75} endAt={0.75} /> : index}
 						</button>
 						<box hexpand />
-
 					</box>
 				));
 			})}

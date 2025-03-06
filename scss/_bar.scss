@@ -40,7 +40,15 @@ window.Bar {
 
     .workspaces {
       background: transparent;
-      padding: 5px 5px;
+      padding: 2px;
+
+      .focused-circ-prog {
+        min-width: 25px;
+        min-height: 25px;
+        background-color: $base0E;
+        // color: $base0E;
+        border-radius: 50%;
+      }
 
       button {
         all: unset;
