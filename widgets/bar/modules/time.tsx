@@ -7,6 +7,6 @@ export default function Time({ format = "%H:%M" }) {
 	);
 
 	return (
-		<label className="Time" onDestroy={() => time.drop()} label={time()} />
+		<label hexpand className="Time" onDestroy={() => time.drop()} label={time()} />
 	);
 }

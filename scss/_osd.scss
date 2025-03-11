@@ -1,18 +1,17 @@
-$fg-color: #{"@theme_fg_color"};
-$bg-color: #{"@theme_bg_color"};
+@use "config";
 
 window.OSD {
   box.OSD {
-    border-radius: 90px;
-    background-color: $bg-color;
+    border-radius: 10px;
+    background-color: config.$base00transparent;
     padding: 13px 16px;
     margin: 13px;
-    min-height: 20px;
-    box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, .4);
+    // min-width: 10px;
+    box-shadow: 3px 3px 7px 0 rgba(0, 0, 0, 0.4);
   }
 
   icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   label {
@@ -21,11 +20,14 @@ window.OSD {
 
   levelbar {
     trough {
-      margin: 0.8rem;
+      margin: 0.1rem 0.1rem 0.6rem 0.1rem;
+      border-radius: 12px;
+      background-color: config.$base02;
     }
 
     block {
-      min-height: 1rem;
+      min-width: 1rem;
+      border-radius: 12px;
     }
   }
 }

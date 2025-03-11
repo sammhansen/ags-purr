@@ -23,8 +23,12 @@ const AnchorCenter = (
 
 const AnchorBottom = (
 	<box vertical spacing={8} vexpand hexpand={false} valign={Gtk.Align.END}>
-		<Time format="%H" />
-		<Time format="%M" />
+		<box hexpand />
+		<box vertical widthRequest={10} spacing={8} className="time-parent-box">
+			<Time format="%H" />
+			<Time format="%M" />
+		</box>
+		<box hexpand />
 		<SysTray />
 		<BatteryLevel />
 	</box>

@@ -1,49 +1,27 @@
-@use "sass:color";
-
-$radius: 10px;
-$batt-radius: 10px;
-
-$base00transparent: color.adjust(#1e1e2e, $alpha: -0.1);
-$base00: #1e1e2e; // Background
-$base01: #313244; // Surface0
-$base02: #45475a; // Surface1
-$base03: #585b70; // Surface2
-$base04: #6c7086; // Overlay0
-$base05: #cdd6f4; // Text
-$base06: #f5e0dc; // Rosewater
-$base07: #bac2de; // Subtext1
-$base08: #f38ba8; // Red
-$base09: #fab387; // Peach
-$base0A: #f9e2af; // Yellow
-$base0B: #a6e3a1; // Green
-$base0C: #94e2d5; // Teal
-$base0D: #89b4fa; // Blue
-$base0E: #cba6f7; // Mauve
-$base0F: #eba0ac; // Maroon
+@use "config";
 
 window.Bar {
   label {
     margin: 0 8px;
   }
 
-  .launcher_button {
-    padding: 1px;
-    background-color: transparent;
+  .launcher-parent-box {
+    border-radius: 5px;
+    background-color: config.$base0E;
 
-    .launcher_label {
-      margin: 0px;
-      color: $base0E;
-      min-width: 20px;
-      min-height: 20px;
+    .launcher-label {
+      margin: 0px 5px 0px 5px;
+      color: #000000;
+      font-size: 25px;
     }
   }
 
   .box_bg {
     margin: 5px 0px 5px 3px;
-    border-radius: $radius;
+    border-radius: config.$radius;
     padding: 2px;
-    background-color: $base00transparent;
-    color: $base05;
+    background-color: config.$base00transparent;
+    color: config.$base05;
     font-weight: normal;
     min-height: 2rem;
     font-size: 1.1em;
@@ -57,7 +35,7 @@ window.Bar {
       .focused-circ-prog {
         min-width: 25px;
         min-height: 25px;
-        background-color: $base0E;
+        background-color: config.$base0E;
         // color: $base0E;
         border-radius: 50%;
       }
@@ -65,7 +43,7 @@ window.Bar {
       button {
         all: unset;
         border: none;
-        color: $base03;
+        color: config.$base03;
 
         &:nth-child(1) {
           margin-left: 0;
@@ -78,8 +56,8 @@ window.Bar {
 
       .focused {
         all: unset;
-        color: $base00;
-        background-color: $base0E;
+        color: config.$base0E;
+        background-color: config.$base00;
         border-radius: 50%;
         opacity: 1;
         margin: 5px;
@@ -87,8 +65,16 @@ window.Bar {
 
       .occupied {
         all: unset;
-        color: $base06;
+        color: config.$base06;
         padding: 1px;
+      }
+    }
+
+    .time-parent-box {
+      background-color: config.$base01;
+      border-radius: config.$radius;
+
+      label {
       }
     }
 
@@ -99,21 +85,21 @@ window.Bar {
       }
 
       menu {
-        background-color: $base00transparent;
+        background-color: config.$base00transparent;
         padding: 0px;
         font-size: 14px;
 
         label {
-          color: $base05;
+          color: config.$base05;
         }
         separator {
-          background-color: $base00transparent;
+          background-color: config.$base00transparent;
         }
       }
     }
 
     .FocusedClient {
-      color: $base0C;
+      color: config.$base0C;
     }
 
     .Media {
@@ -123,7 +109,7 @@ window.Bar {
         padding: 0px;
         min-height: 1.2em;
         min-width: 0.2em;
-        border-radius: $radius;
+        border-radius: config.$radius;
         background-position: center;
         background-size: contain;
         background-color: transparent;
@@ -138,17 +124,17 @@ window.Bar {
       .batt-container {
         all: unset;
         margin: 6px;
-        background-color: $base04; /* Background color */
+        background-color: config.$base04; /* Background color */
         min-width: 1px; /* Fixed width */
         // min-height: 90px;            /* Fixed height */
-        border-radius: $batt-radius; /* Rounded corners */
-        border: 2px solid $base04;
+        border-radius: config.$radius; /* Rounded corners */
+        border: 2px solid config.$base04;
 
         .batt-bar {
           all: unset;
-          background-color: $base0C; /* Color of battery level */
-          border-top-left-radius: $batt-radius;
-          border-bottom-left-radius: $batt-radius;
+          background-color: config.$base0C; /* Color of battery level */
+          border-top-left-radius: config.$radius;
+          border-bottom-left-radius: config.$radius;
           border-radius: inherit;
           // min-width: ;
           transition: width 0.3s ease-in-out;
@@ -173,8 +159,8 @@ window.Bar {
     }
 
     .CircleIndicator {
-      color: $base0E;
-      background-color: $base04;
+      color: config.$base0E;
+      background-color: config.$base04;
       font-size: 0.15em;
       min-width: 10px;
     }
